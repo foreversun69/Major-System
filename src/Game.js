@@ -75,7 +75,7 @@ class Game extends Component{
       let board = this.state.board;
       let [y, x] = coord.split("").map(Number);
       let zeit = this.zwischenZeit();
-      board[y][x] = `${answer}: ${zeit}`;
+      board[y][x] = `${zeit} ${answer}=${this.state.solutionZahl}`;
       this.setState({board: board, cellanswer: board[y][x] });
     }
 
