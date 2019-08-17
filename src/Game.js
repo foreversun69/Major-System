@@ -42,6 +42,7 @@ class Game extends Component{
     }
 
     onRestart(){
+      console.log(this);
       this.setState({
         answer: "",
         solutionZahl: "00",
@@ -145,6 +146,7 @@ class Game extends Component{
              answerList: [...st.answerList, answer],
              zwischenZeit: zwischenzeit,
              zeitList: [...st.zeitList, zwischenzeit]
+             
         }});
         do{
           //Erstellen neues Wort
@@ -186,7 +188,7 @@ class Game extends Component{
           ?
             <div>            
               <h1>Major-System</h1>
-              <h2>Das berühmte Gedächtnis-System mit Aktuell: {this.state.answerList.length} / {data.length} gelösten Begriffen</h2>
+              <h2>{this.state.answerList.length} / {data.length}</h2>
               {result}
               <table className="Board"><tbody>
               {this.createTable()}
